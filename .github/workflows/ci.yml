@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: Swift tests
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: VPNCore tests
+        run: swift test --filter VPNCoreTests
+
+      - name: AnyConnectClientSupport tests
+        run: swift test --filter AnyConnectClientSupportTests
+
+      - name: OpenConnectRuntime tests
+        run: swift test --filter OpenConnectRuntimeTests
+
+      - name: Publication audit
+        run: Scripts/audit-publication.sh
