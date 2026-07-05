@@ -4,6 +4,10 @@ macOS menu bar client for AnyConnect-compatible VPN servers in local SOCKS5 mode
 
 The app runs `openconnect --script-tun` with `ocproxy`, manages one or more VPN profiles, and exposes each profile as its own local SOCKS5 endpoint. It intentionally does not enable system-wide VPN, Network Extension, PAC, or system proxy settings.
 
+## Project Origin
+
+This project was generated and iteratively developed with OpenAI Codex in collaboration with the repository owner. Codex assisted with architecture, Swift implementation, tests, release packaging, and publication audit; runtime decisions and local VPN verification were guided by the owner.
+
 ## Status
 
 - Platform: macOS 14+, Apple Silicon.
