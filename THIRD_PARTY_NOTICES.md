@@ -1,25 +1,25 @@
 # Third-Party Notices
 
-This project vendors third-party source code so the VPN runtime can be studied, built, and packaged locally.
+This project uses third-party OpenConnect and ocproxy source/build trees locally, but does not track them in the public repository. Put those dependencies under `ThirdParty/` on the release machine before packaging.
 
 ## OpenConnect
 
-- Path: `ThirdParty/openconnect-9.21/`
+- Local path: `ThirdParty/openconnect-9.21/`
 - Upstream: OpenConnect VPN client
-- License file in this repository: `ThirdParty/openconnect-9.21/COPYING.LGPL`
-- Notes: Release packaging may bundle a locally built `openconnect` executable. Built binaries are not committed to git.
+- License file in the local source tree: `ThirdParty/openconnect-9.21/COPYING.LGPL`
+- Notes: Release packaging may bundle a locally built `openconnect` executable. Third-party source and built binaries are not committed to git.
 
 ## ocproxy
 
-- Path: `ThirdParty/ocproxy/`
+- Local path: `ThirdParty/ocproxy/`
 - Upstream: ocproxy
-- License file in this repository: `ThirdParty/ocproxy/LICENSE`
-- Notes: Release packaging may bundle a locally built `ocproxy` executable. Built binaries are not committed to git.
+- License file in the local source tree: `ThirdParty/ocproxy/LICENSE`
+- Notes: Release packaging may bundle a locally built `ocproxy` executable. Third-party source and built binaries are not committed to git.
 
 ## lwIP inside ocproxy
 
-- Path: `ThirdParty/ocproxy/lwip/`
-- License file in this repository: `ThirdParty/ocproxy/lwip/COPYING`
+- Local path: `ThirdParty/ocproxy/lwip/`
+- License file in the local source tree: `ThirdParty/ocproxy/lwip/COPYING`
 
 ## Generated App Icon
 

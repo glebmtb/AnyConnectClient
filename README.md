@@ -4,6 +4,12 @@ macOS menu bar client for AnyConnect-compatible VPN servers in local SOCKS5 mode
 
 The app runs `openconnect --script-tun` with `ocproxy`, manages one or more VPN profiles, and exposes each profile as its own local SOCKS5 endpoint. It intentionally does not enable system-wide VPN, Network Extension, PAC, or system proxy settings.
 
+## Коротко по-русски
+
+AnyConnectClient - это macOS tray-клиент для AnyConnect/OpenConnect, который поднимает каждый VPN-профиль как отдельный локальный SOCKS5 endpoint. Приложение не включает system-wide VPN и не меняет системные proxy-настройки.
+
+`ThirdParty/` не хранится в GitHub-репозитории: исходники и локальные сборки OpenConnect/ocproxy должны лежать там только на машине сборки и игнорируются git. Реальные профили, пароли, servercert pin, cookie и smoke-test адреса тоже нельзя коммитить.
+
 ## Project Origin
 
 This project was generated and iteratively developed with OpenAI Codex in collaboration with the repository owner. Codex assisted with architecture, Swift implementation, tests, release packaging, and publication audit; runtime decisions and local VPN verification were guided by the owner.
@@ -38,7 +44,7 @@ Sources/AnyConnectClientSupport/ profile settings and credential stores
 Tools/AnyConnectCredentialTool/  local diagnostics and migration helper
 Scripts/                         release packaging, smoke helpers, icon generation
 Assets/                          app icon source and .icns
-ThirdParty/                      vendored OpenConnect and ocproxy sources
+ThirdParty/                      local ignored OpenConnect and ocproxy source/build trees
 docs/                            architecture, decisions, release notes
 ```
 
@@ -61,14 +67,14 @@ For app icon and Activity Monitor integration, run the packaged `.app` bundle ra
 
 ## Release Packaging
 
-Release packaging expects locally built runtime binaries at:
+Release packaging expects local OpenConnect and ocproxy source/build trees at:
 
 ```text
 ThirdParty/openconnect-9.21/openconnect
 ThirdParty/ocproxy/ocproxy
 ```
 
-Those binaries are intentionally ignored by git. Build them locally from the vendored source trees, then package:
+The whole `ThirdParty/` directory is intentionally ignored by git. Put or build those dependencies locally, then package:
 
 ```sh
 Scripts/package-release-app.sh 1.0.0 1
@@ -123,7 +129,7 @@ See [SECURITY.md](SECURITY.md).
 
 ## Third-Party Code
 
-This repository vendors OpenConnect and ocproxy source trees. They remain under their upstream licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+The public repository does not track OpenConnect or ocproxy source trees. Release builds use local ignored copies under `ThirdParty/`; those projects remain under their upstream licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## License
 
