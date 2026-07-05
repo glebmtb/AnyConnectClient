@@ -6,6 +6,8 @@ This project uses third-party OpenConnect and ocproxy source/build trees locally
 
 - Local path: `ThirdParty/openconnect-9.21/`
 - Upstream: OpenConnect VPN client
+- Download page: `https://www.infradead.org/openconnect/download.html`
+- Source mirror: `https://gitlab.com/openconnect/openconnect`
 - License file in the local source tree: `ThirdParty/openconnect-9.21/COPYING.LGPL`
 - Notes: Release packaging may bundle a locally built `openconnect` executable. Third-party source and built binaries are not committed to git.
 
@@ -13,6 +15,7 @@ This project uses third-party OpenConnect and ocproxy source/build trees locally
 
 - Local path: `ThirdParty/ocproxy/`
 - Upstream: ocproxy
+- Source repository: `https://github.com/cernekee/ocproxy`
 - License file in the local source tree: `ThirdParty/ocproxy/LICENSE`
 - Notes: Release packaging may bundle a locally built `ocproxy` executable. Third-party source and built binaries are not committed to git.
 

@@ -74,7 +74,27 @@ ThirdParty/openconnect-9.21/openconnect
 ThirdParty/ocproxy/ocproxy
 ```
 
-The whole `ThirdParty/` directory is intentionally ignored by git. Put or build those dependencies locally, then package:
+The whole `ThirdParty/` directory is intentionally ignored by git. Put or build those dependencies locally.
+
+Upstream sources:
+
+- OpenConnect downloads: [infradead.org/openconnect/download.html](https://www.infradead.org/openconnect/download.html)
+- OpenConnect 9.21 tarball: [openconnect-9.21.tar.gz](https://www.infradead.org/openconnect/download/openconnect-9.21.tar.gz)
+- OpenConnect GitLab mirror: [gitlab.com/openconnect/openconnect](https://gitlab.com/openconnect/openconnect)
+- ocproxy source: [github.com/cernekee/ocproxy](https://github.com/cernekee/ocproxy)
+
+Example layout preparation:
+
+```sh
+mkdir -p ThirdParty
+
+curl -L https://www.infradead.org/openconnect/download/openconnect-9.21.tar.gz \
+  | tar -xz -C ThirdParty
+
+git clone https://github.com/cernekee/ocproxy.git ThirdParty/ocproxy
+```
+
+Build `openconnect` and `ocproxy` in those local source trees, then package:
 
 ```sh
 Scripts/package-release-app.sh 1.0.0 1
