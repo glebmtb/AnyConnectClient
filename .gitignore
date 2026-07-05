@@ -1,0 +1,51 @@
+.DS_Store
+*.iml
+*~
+AnyConnectClient_icon.zip
+AnyConnectClient_icon*.png
+
+# Local VPN credentials and profiles. Keep real secrets out of git and logs.
+.vpn_access_profile
+.vpn-access-credentials
+.vpn_access_credentials
+*.local.vpnprofile
+
+# Build products.
+.build/
+DerivedData/
+build/
+dist/
+Assets/AppIcon.iconset/
+*.xcuserstate
+*.xcuserdata/
+
+# Autotools outputs from vendored C projects.
+ThirdParty/**/Makefile
+*.o
+*.lo
+*.la
+*.lai
+*.a
+.deps/
+.libs/
+.dirstamp
+config.h
+config.log
+config.status
+stamp-h1
+*.pc
+ThirdParty/openconnect-9.21/tests/softhsm/
+ThirdParty/openconnect-9.21/tests/swtpm-perm.state
+
+# Locally built vendored executables.
+ThirdParty/openconnect-9.21/openconnect
+ThirdParty/openconnect-9.21/list-system-keys
+ThirdParty/openconnect-9.21/os-tcp-mtu
+ThirdParty/openconnect-9.21/libtool
+ThirdParty/openconnect-9.21/tests/buftest
+ThirdParty/openconnect-9.21/tests/lzstest
+ThirdParty/openconnect-9.21/tests/seqtest
+ThirdParty/openconnect-9.21/tests/serverhash
+ThirdParty/openconnect-9.21/tests/softhsm2.conf
+ThirdParty/ocproxy/ocproxy
+.idea

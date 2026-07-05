@@ -1,0 +1,39 @@
+# autotools stuff
+Makefile
+Makefile.in
+aclocal.m4
+compile
+config.h
+config.h.in
+config.log
+config.status
+configure
+depcomp
+install-sh
+missing
+.deps/
+.dirstamp
+stamp-h1
+autom4te.cache/
+config.guess
+config.sub
+m4/
+
+# objects
+*.o
+ocproxy
+vpnns
+ocproxy*.tar.gz
+ocproxy*.tar.gz.asc
+/TAGS
+/tags
+
+# Debian
+tmp.debian/
+ocproxy*.deb
+lintian.txt
+ppa/changelog
+
+# scratch files
+.*.sw*
+*~
